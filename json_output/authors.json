@@ -1,0 +1,71 @@
+[ {
+  "createdDate" : [ 2025, 9, 12, 10, 57, 30, 403000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 10, 57, 30, 403000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3af422662a911fddf4fb7",
+  "name" : "Anton Chekhov",
+  "email" : "chekhovanton@englishlit.com",
+  "articleCount" : 41,
+  "active" : true
+}, {
+  "createdDate" : [ 2025, 9, 12, 10, 59, 3, 846000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 10, 59, 3, 846000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3af9f2662a911fddf4fb8",
+  "name" : "Walt Whitman",
+  "email" : "whitmanwalt@englishlit.com",
+  "articleCount" : 43,
+  "active" : true
+}, {
+  "createdDate" : [ 2025, 9, 12, 10, 59, 46, 846000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 10, 59, 46, 846000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3afca2662a911fddf4fb9",
+  "name" : "John Milton",
+  "email" : "miltonjohn@englishlit.com",
+  "articleCount" : 37,
+  "active" : true
+}, {
+  "createdDate" : [ 2025, 9, 12, 11, 0, 5, 536000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 12, 30, 58, 51000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3afdd2662a911fddf4fba",
+  "name" : "Shelley PB",
+  "email" : "shelleypb@englishlit.com",
+  "articleCount" : 29,
+  "active" : true
+}, {
+  "createdDate" : [ 2025, 9, 12, 11, 0, 28, 953000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 11, 0, 28, 953000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3aff42662a911fddf4fbb",
+  "name" : "John Keats",
+  "email" : "keatsjohn@englishlit.com",
+  "articleCount" : 29,
+  "active" : true
+}, {
+  "createdDate" : [ 2025, 9, 12, 12, 32, 43, 165000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 12, 32, 43, 165000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3c5933f0bc12e0f5d2653",
+  "name" : "Alfred Tennyson",
+  "email" : "tennysonalfred@gmail.com",
+  "articleCount" : 43,
+  "active" : true
+}, {
+  "createdDate" : [ 2025, 9, 12, 12, 36, 53, 640000000 ],
+  "lastModifiedDate" : [ 2025, 9, 12, 15, 5, 16, 285000000 ],
+  "createdBy" : "system-user",
+  "lastModifiedBy" : "system-user",
+  "id" : "68c3c68d3f0bc12e0f5d2654",
+  "name" : "Robert Frost",
+  "email" : "frostrobert@gmail.com",
+  "articleCount" : 17,
+  "active" : true
+} ]

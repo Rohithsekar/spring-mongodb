@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-mongo
+  data:
+    mongodb:
+      uri: mongodb://admin:password123@localhost:27017/myDatabase?authSource=admin
+#      need to specify this property to enable index creation with annotations
+      auto-index-creation: true
+      connection-pool:
+        min-size: 0
+        max-size: 100
+        max-wait-time: 120000ms
+        max-connection-life-time: 0ms
+        max-connection-idle-time: 0ms
+        maintenance-initial-delay: 0ms
+        maintenance-frequency: 60000ms
+      ssl:
+        enabled: false
+        invalid-host-name-allowed: false
+  output:
+    ansi:
+      enabled: ALWAYS
+
+management:
+  health:
+    mongo:
+      enabled: true
+
+logging:
+  pattern:
+#    %d{...}: The timestamp, [%X{traceId}]: The MDC variable for your trace ID. ..%clr -> warps the specific log operand
+#    {38;5;22} -> dark green, 38;5;106 -> olive green
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p){38;5;22} %clr([%thread]){38;5;10} %clr([%X{traceId}]){cyan} %clr(%logger{36}){cyan} - %m%n"
+  level:
+    org.springframework.data.mongodb: DEBUG
+
+
+
+
+
+
+
+

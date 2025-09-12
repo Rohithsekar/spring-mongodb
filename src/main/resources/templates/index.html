@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Mongo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        h1 { text-align: center; }
+        form, #authorList { margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        label, input, button { display: block; margin-bottom: 10px; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .actions-cell { text-align: center; }
+        .actions-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .actions-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .actions-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .actions-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .actions-dropdown:hover .actions-content {
+            display: block;
+        }
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .page-info {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Author Management System</h1>
+
+    <hr>
+
+    <h2>Authors List</h2>
+    <button id="addAuthorButton">Add New Author</button>
+    <table id="authorsTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Article Count</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+        <label for="pageSize">Page Size:</label>
+        <select id="pageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+        <button id="prevPageButton">Previous</button>
+        <span id="pageInfo" class="page-info">Page 1 of 1</span>
+        <button id="nextPageButton">Next</button>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        Total Authors: <span id="totalCount">0</span>
+    </div>
+</div>
+
+<!-- Modal for Add Author -->
+<div id="addAuthorModal" style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+    <div style="background-color:#fefefe; margin:15% auto; padding:20px; border:1px solid #888; width:80%;">
+        <span onclick="document.getElementById('addAuthorModal').style.display='none'" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+        <h2>Add Author</h2>
+        <form id="addAuthorForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="articleCount">Article Count:</label>
+            <input type="text" id="articleCount" name="articleCount">
+            <button type="submit">Add Author</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Update Author -->
+<div id="updateAuthorModal" style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+    <div style="background-color:#fefefe; margin:15% auto; padding:20px; border:1px solid #888; width:80%;">
+        <span onclick="document.getElementById('updateAuthorModal').style.display='none'" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+        <h2>Update Author</h2>
+        <form id="updateAuthorForm">
+            <input type="hidden" id="updateId" name="updateId">
+            <label for="updateName">Name:</label>
+            <input type="text" id="updateName" name="updateName">
+            <label for="updateEmail">Email:</label>
+            <input type="email" id="updateEmail" name="updateEmail">
+            <label for="updateArticleCount">Article Count:</label>
+            <input type="text" id="updateArticleCount" name="updateArticleCount">
+            <button type="submit">Update Author</button>
+        </form>
+    </div>
+</div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

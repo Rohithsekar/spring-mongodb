@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: spring-mongo
+  data:
+    mongodb:
+      uri: mongodb://admin:password123@localhost:27017/test?authSource=admin
