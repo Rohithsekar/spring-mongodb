@@ -4,26 +4,19 @@ package com.rohi.spring_mongo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.rohi.spring_mongo.entity.Author;
-import com.rohi.spring_mongo.repository.AuthorRepository;
-import org.instancio.Instancio;
+import com.rohi.spring_mongo.author.model.Author;
+import com.rohi.spring_mongo.author.repository.AuthorRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 /**
  * Spring Data MongoDB provides a high-level abstraction over the MongoDB Query API and
@@ -31,7 +24,8 @@ import java.util.stream.Collectors;
  */
 
 @SpringBootApplication
-@EnableMongoRepositories(basePackages = "com.rohi.spring_mongo.repository")
+@EnableMongoRepositories(basePackages = {"com.rohi.spring_mongo.author.repository",
+        "com.rohi.spring_mongo.e_commerce.repository"})
 public class SpringMongoApplication {
 
     public static void main(String[] args) {
@@ -42,8 +36,8 @@ public class SpringMongoApplication {
     @Bean
     public CommandLineRunner run(AuthorRepository authorRepository) {
 
+        System.out.println("hello world");
         return (args) -> {
-
 
             List<Author> authorList = authorRepository.findAll();
 
@@ -81,16 +75,12 @@ public class SpringMongoApplication {
                 e.printStackTrace();
             }
         };
-    }
-
-
-//            authorList.forEach(a -> {
-//                a.setCreatedBy("system-user");
-//                a.setCreatedDate(LocalDateTime.now());
-//            });
 
 
     }
+
+
+}
 
 
 

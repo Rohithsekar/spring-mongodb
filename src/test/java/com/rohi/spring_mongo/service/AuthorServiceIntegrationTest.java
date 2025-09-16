@@ -1,8 +1,9 @@
 package com.rohi.spring_mongo.service;
 
-import com.rohi.spring_mongo.dto.request.AddAuthorRequest;
-import com.rohi.spring_mongo.entity.Author;
-import com.rohi.spring_mongo.repository.AuthorRepository;
+import com.rohi.spring_mongo.author.service.AuthorService;
+import com.rohi.spring_mongo.author.dto.request.AddAuthorRequest;
+import com.rohi.spring_mongo.author.model.Author;
+import com.rohi.spring_mongo.author.repository.AuthorRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -33,7 +33,7 @@ logging:
   pattern:
 #    %d{...}: The timestamp, [%X{traceId}]: The MDC variable for your trace ID. ..%clr -> warps the specific log operand
 #    {38;5;22} -> dark green, 38;5;106 -> olive green
-    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p){38;5;22} %clr([%thread]){38;5;10} %clr([%X{traceId}]){cyan} %clr(%logger{36}){cyan} - %m%n"
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p){38;5;22} %clr([%thread]){38;5;10} %clr([%X{traceID}]){blue} %clr(%logger{36}){cyan} - %m%n"
   level:
     org.springframework.data.mongodb: DEBUG
 

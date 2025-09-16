@@ -1,8 +1,9 @@
 package com.rohi.spring_mongo.service;
 
-import com.rohi.spring_mongo.dto.misc.ServerException;
-import com.rohi.spring_mongo.dto.request.AddAuthorRequest;
-import com.rohi.spring_mongo.repository.AuthorRepository;
+import com.rohi.spring_mongo.author.service.AuthorService;
+import com.rohi.spring_mongo.global.dto.misc.ServerException;
+import com.rohi.spring_mongo.author.dto.request.AddAuthorRequest;
+import com.rohi.spring_mongo.author.repository.AuthorRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
