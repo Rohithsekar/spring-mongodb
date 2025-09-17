@@ -4,6 +4,7 @@ package com.rohi.spring_mongo.e_commerce.controller;
 import com.rohi.spring_mongo.author.dto.response.APIResponse;
 import com.rohi.spring_mongo.e_commerce.dto.request.ProductSearchRequest;
 import com.rohi.spring_mongo.e_commerce.dto.response.ProductResponse;
+import com.rohi.spring_mongo.e_commerce.dto.response.TopSellingProduct;
 import com.rohi.spring_mongo.e_commerce.service.ProductService;
 import com.rohi.spring_mongo.global.constants.Constants;
 import jakarta.servlet.http.HttpServletRequest;
@@ -108,17 +109,16 @@ public class ProductController {
 //        return ResponseEntity.ok(products);
 //    }
 //
-//    /**
-//     * Get top selling products
-//     * GET /api/products/top-selling?limit=10
-//     */
-//    @GetMapping("/top-selling")
-//    public ResponseEntity<List<ProductResponse>> getTopSellingProducts(
-//            @RequestParam(defaultValue = "10") Integer limit) {
-//
-//        List<ProductResponse> products = productService.getTopSellingProducts(limit);
-//        return ResponseEntity.ok(products);
-//    }
+
+    /**
+     * Get top selling products
+     * GET /api/products/top-selling?limit=10
+     */
+        @GetMapping("/top-selling")
+    public ResponseEntity<APIResponse> getTopSellingProducts(@RequestParam(required = false, defaultValue = "10") Integer limit, HttpServletRequest servletRequest) {
+        List<TopSellingProduct> topSellingProducts = productService.getTopSellingProducts(limit, servletRequest);
+        return ResponseEntity.ok().body(new APIResponse(Constants.SUCCESS, "fetched top-selling products successfully", topSellingProducts));
+    }
 //
 //    /**
 //     * Get product recommendations
